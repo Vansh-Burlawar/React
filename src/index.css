@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Title {
+  text-align: center;
+  font:bold;
+  font-size: 75px;
+   background: linear-gradient(180deg, #7b1e1f, #f5cc04); /* example colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.SearchBar{
+  display: flex;
+  justify-content: center;
+  
+
+}
+.SearchBar input{
+  width: 290px;
+
+}
