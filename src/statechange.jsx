@@ -1,26 +1,41 @@
-import React, {Component} from "react";
+import React, { useState } from "react";
 import movies from "./Movies";
-import { render } from "@testing-library/react";
 
+function Chan() {
+  const [searchValue, setSearchValue] = useState(""); // state for search
+  const [movieList] = useState(movies); // state for movies (kept fixed here)
+  console.log("All movies:", movieList);
 
-class Chan extends Component {
-    constructor(){
-        super();
-        this.setState= {
-            searchValue : '',
-            movies : movies
-        };
-    }
+   const handlechange = (e) => {
+     setSearchValue(e.target.value);
+   };
+  console.log("Current searchValue:", searchValue);
 
-    onChange = (e)=>{
-        this.setState({searchValue : e.target.value});
-    }
+  // filter movies based on search
+  console.log(searchValue)
+  const filter_movies = movieList.filter(movie =>{
+    movie.name.toLowerCase().includes(searchValue.toLowerCase())
 
-    render(){
-        const filter_movies = this.state.movies.filter(movie) => {
-            return movie.title.toLowercase().includes(this.setState.searchValue.toLowerCase());
-        }
-    }
+  }
     
+  );
 
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchValue}
+        onChange={(e)=>setSearchValue(e.target.value)}
+      />
+
+      <ul>
+        {filter_movies.map(movie => (
+          <li key={movie.id}>{movie.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
+
+export default Chan;
