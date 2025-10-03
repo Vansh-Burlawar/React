@@ -26,7 +26,7 @@ function Chan() {
         type="text"
         placeholder="Search..."
         value={searchValue}
-        onChange={(e)=>setSearchValue(e.target.value)}
+        onChange={handlechange}
       />
 
       <ul>
