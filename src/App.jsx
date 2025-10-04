@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <div className='card-container'>
         {movies.map(movies=> (
-          <Card key={movies.id} name={movies.name} genre={movies.genre} Release={movies.releaseYear} url={movies.bannerUrl} /> 
+          <Card key={movies.id} name={movies.name} genre={movies.genre} releaseYear={movies.releaseYear} url={movies.bannerUrl} /> 
         ))}
       </div>
     </div>
